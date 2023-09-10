@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Myriad-regular";
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF");
+}
+
+@font-face {
+  font-family: "Myriad-light";
+  src: url("../fonts/MyriadPro-Light.otf");
+}
+
+@font-face {
+  font-family: "Myriad-bold";
+  src: url("../fonts/MYRIADPRO-BOLD.OTF");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: white;
+  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  background-image: url('/images/bg_1.png');
+  background-position: 0px 0px;
+  background-size: contain;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* example: override wallet button style */
+.wallet-adapter-button:not([disabled]):hover {
+  background-color: #707070;
+}
+.wallet-adapter-button {
+  font-family: "Myriad-bold";
+  font-size: 20px;
+}
+.wallet-adapter-custom {
+  background: white;
+  color: black;
+  padding: 12px 0;
+  border-radius: 15px;
+  height: auto;
+  line-height: unset;
+  margin: auto;
+  width: 220px;
+  justify-content: center;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  width: 16px;
+  height: 16px;
+  border: 1px solid white;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  @apply bg-black border;
+
+  /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+  }
+}
+svg {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+svg:hover {
+  fill: #EE824F;
+}
+svg:active {
+  fill: #ffffff;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
